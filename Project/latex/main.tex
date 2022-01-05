@@ -110,7 +110,7 @@
 		%\setcounter{page}{1} % Set the page counter to 3
 \pagenumbering{arabic} % Start roman numbering
 \section{Data Understanding \& Preparation}
-The \textit{Glasgow Norms} are a set of ratings of English words based on 9 different parameters (\textit{arousal}, \textit{valence}, \textit{dominance}, \textit{concreteness}, \textit{imageability, familiarity, age of acquisition, size, gender}). These parameters are going to be described in this section of the report, other aspects will be discussed in other sections. In addition, there are other variables (not in the \textit{Glasgow Norms} set) useful for the analysis, such as the \textit{length} and a \textit{polysemy} index for each word, and the \textit{frequency} of the word found in the Google \textit{web corpus}. The provided dataset counts 4682 unique words. 
+The \textit{Glasgow Norms} are a set of ratings of English words based on 9 different parameters (\textit{arousal}, \textit{valence}, \textit{dominance}, \textit{concreteness}, \textit{imageability, familiarity, age of acquisition, size, gender}). These parameters will be described during this section of the report, other aspects will be discussed in further sections. Additionally, there are other variables (not in the \textit{Glasgow Norms} set) useful for the analysis, such as the \textit{length} and a \textit{polysemy} index for each word, and the \textit{frequency} of the word found in the Google \textit{web corpus}. The provided dataset consists of 4682 unique words. 
 
 
 \subsection{Data Semantics}\label{semantic}
@@ -120,33 +120,33 @@ In the next paragraphs the variables will be analyzed one by one.
 
 
 
-\paragraph{Arousal} (continuous numerical) indicates how much excitement is felt by the person interviewed reading the word. Its range varies from 1 to 9, where 1 means very calm and 9 very excited. This parameter is an indicator of the emotional impact of the word.
+\paragraph{Arousal} (continuous numerical) indicates how much excitement is felt by the person interviewed when reading the word. Its range varies from 1 to 9, where 1 means very calm and 9 very excited. This parameter is an indicator of the emotional impact of the word.
 %Its mean is 4.68 and its Standard Deviation is 1.10. All the statistical information can be seen in Table \ref{tab:stat}, and its distribution in Figure \ref{fig:ardis}.
 %
-\paragraph{Valence} (continuous numerical) is a measure of how much the object is valuable . The range varies from 1 to 9, where 1 is a low value indicator and 9 high value. It is not specified in the dataset the meaning of value. It could be interpreted in a sense of economics or also personal (affection, etc.). Like \textit{arousal}, this parameter is also an indicator of the emotional impact of the word.
+\paragraph{Valence} (continuous numerical) is a measure of how much the object is valuable . The range varies from 1 to 9, where 1 is a low value indicator and 9 high value. The meaning of value is not specified in the dataset. It could be interpreted in a sense of economics or also personal (affection, etc.). Like \textit{arousal}, this parameter is also an indicator of the emotional impact of the word.
 %Its mean is 5.09 and its Standard Deviation is 1.59. All the statistical information can be seen in Table \ref{tab:stat}, and its distribution in Figure \ref{fig:valdis}.
 %
 \paragraph{Dominance} (continuous numerical) is the parameter that treats the degree of control that is felt over the object. The range varies from 1 to 9, where 1 is low control and 9 high. This is the last parameter of the emotional impact of the word.
 %
 %Its mean is 5.04 and its Standard Deviation is 0.93. All the statistical information can be seen in Table \ref{tab:stat}, and its distribution in Figure \ref{fig:domdis}.
 %
-\paragraph{Concreteness} (continuous numerical) represents the degree to which something can be experienced by our senses. It is a numerical variable that ranges from 1 (more abstract concepts) to 7 (words that refer to persons, places and things that can be seen, heard, felt, smelled or tasted).
+\paragraph{Concreteness} (continuous numerical) represents the degree to which something can be experienced by our senses. It is a numerical variable that ranges from 1 (more abstract concepts) to 7 (words that refer to people, places and things that can be seen, heard, felt, smelled or tasted).
 
 \paragraph{Imageability} (continuous numerical) measures how difficult is to generate a mental image of something. It is a numerical parameter that ranges from 1, hard to imagine, to 7, easy to imagine. 
 
-\paragraph{Familiarity} (continuous numerical) is a measure of how commonly a word is experienced. The interval scale of this numerical variable is from 1 to 7, based on how familiar participants were with the given word: 1, if they were unfamiliar; 7, if they were greatly familiar. 
+\paragraph{Familiarity} (continuous numerical) is a measure of how commonly a word is experienced. The interval scale of this numerical variable is from 1 to 7, based on how familiar participants were with the given word: 1 if they were unfamiliar; 7 if they were greatly familiar. 
 
 
-\paragraph{Age of Acquisition [aoa]} (continuous numerical) indicates the supposed age in which that person first learned that specific word. Clearly it is not easy to remember at which age a word is learned, and for that reason in this dataset this variables refers to an estimation of the age of acquisition, introducing this parameter. The scale is defined as a series of consecutive 2-year periods from the ages of 0 to 12 years, and a final period referring to 13 years and older. This leads us to define 7 different ranges, 0-2, 2-4, 4-6, 6-8, 8-10, 10-12 and 13+.
+\paragraph{Age of Acquisition [aoa]} (continuous numerical) indicates the supposed age in which a person first learned that specific word. Clearly it is not easy to remember at which age a word is learned, and for that reason in this dataset this variables refers to an estimation of the age of acquisition, introducing this parameter. The scale is defined as a series of consecutive 2-year periods from the ages of 0 to 12 years, and a final period referring to 13 years and older. This leads us to define 7 different ranges, 0-2, 2-4, 4-6, 6-8, 8-10, 10-12 and 13+.
 
 %There are 4682 occurrences for this variable. That means that there are no missing values, or NaN. The mean is 4.14, and the standard deviation is 1.25. All the informations about the statistics of the variable are report in Table \ref{tab:stat}
 
 \paragraph{Size} (continuous numerical) is a measure of magnitude expressed in either concrete or abstract terms (big, small). That is, if a word can be associated with adjectives like big or small (e.g. palace or mountain for concrete object, and knowledge or love for abstract ideas). The range adopted varies from 1 to 7, where one is a small object and 7 a big object. 
 %The count of occurrences for this variable suggests that there are no missing values. The mean is 4.13 and the standard deviation is just above 1.
 
-\paragraph{Gender} (continuous numerical) refers to how strongly its meaning is associated with male or female behavior. This variable could be very interesting in regards of the social bias that might, or might not, be present. \\
+\paragraph{Gender} (continuous numerical) refers to how strongly its meaning is associated with male or female behavior. This variable could be very interesting in regards to the social bias that might, or might not, be present. \\
 The variable is numerical and has a range that goes from 1 to 7. 
-This may make the parameter not self-intuitive. There is no visible correlation between the number and the perceived gender of that word. A supposition is that the higher the value, the more ``masculine'' the word is perceived. For example the word \texttt{actor} has a perceived gender value of 5.588, while \texttt{actress} 1.303. This may lead to a transformation of the variable, which will be eventually discussed in another section.
+This may make the parameter not self-intuitive. There is no visible correlation between the number and the perceived gender of that word. A speculation is that the higher the value, the more "masculine'' the word is perceived. For example the word \texttt{actor} has a perceived gender value of 5.588, while \texttt{actress} 1.303. This may lead to a transformation of the variable, which will be eventually discussed in another section.
 \begin{comment}
 \begin{figure}[h]
     \raggedright
@@ -211,7 +211,7 @@ A brief overview of the distribution of each variable can be seen in Figure \ref
 
 
 
-The parameters \textit{concreteness}, \textit{imageability}, \textit{age of acquisition} tend to a uniform distribution. \textit{Familiarity} is heavily centered on the right side of the graphs, meaning that apparently the words sounds very familiar to the readers. It is also the parameter with the smallest standard deviation. \textit{Concreteness} and \textit{imageability} have a distribution similar to a bimodal shape. The other parameters are all middle-centered. To have a better idea of the values a complete statistical overview of the variables (mean, std deviation, percentile, etc.) is reported in Table \ref{tab:stat}. 
+The parameters \textit{concreteness}, \textit{imageability} and \textit{age of acquisition} tend to a uniform distribution. \textit{Familiarity} is heavily centered on the right side of the graphs, meaning that apparently the words sound very familiar to the readers. It is also the parameter with the smallest standard deviation. \textit{Concreteness} and \textit{imageability} have a distribution similar to a bimodal shape. The other parameters are all middle-centered. To have a better idea of the values, a complete statistical overview of the variables (mean, std deviation, percentile, etc.) is reported in Table \ref{tab:stat}. 
 
 \begin{table}[h]
     \centering
@@ -265,11 +265,11 @@ range & 1-7 & 1-7 & 1-7 & 1-7 & 0/1 & 0-$\infty$ \\
 
 \subsection{Assessing Data Quality}
 %MORENO
-In this section it will be discussed the quality of the dataset, i.e. missing values, outliers, errors and semantic inconsistencies. This kind of analysis is performed using the pandas library, if not else specified.
+In this section, the quality of the data will be discussed, i.e. missing values, outliers, errors and semantic inconsistencies. This kind of analysis is performed using the pandas library, unless otherwise specified.
 
 \subsubsection{Missing Values}
 
-The dataset seems to be almost without null values. In fact, there are only 14 NaN, and all are concentrated in the \textit{web\_corpus\_freq} variable, shown in Figure \ref{fig:missing}. Given the small number of missing value, a substitution does not lead to a change in the distribution, so we chose to substitute the 14 NaN with the mean value of \textit{web\_corpus\_freq}.
+The dataset seems to be almost free of null values. In fact, there are only 14 NaN, and all are concentrated in the \textit{web\_corpus\_freq} variable, shown in Figure \ref{fig:missing}. Given the small number of missing values, a substitution does not lead to a change in the distribution, so we chose to substitute the 14 NaN with the mean value of \textit{web\_corpus\_freq}.
 
 \begin{figure}[h]
     \centering
@@ -293,10 +293,10 @@ Looking at the values that are present in the dataset but are not present in the
 \subsubsection{Outliers}
 
 
-First, some variables had to be dropped to perform the analysis with boxplots. \textit{word} is not a numerical variable, and for that reason is not used in this plot. \textit{web\_corpus\_freq} and \textit{polysemy} can be analyzed on their own.
+First, some variables had to be dropped to perform the boxplot analysis. \textit{word} is not a numerical variable, and for that reason it is not used in this plot. \textit{web\_corpus\_freq} and \textit{polysemy} can be analyzed on their own.
 
 
-The plot in Figure \ref{fig:outliers} shows that some variables are well distributed, like \textit{concreteness} and \textit{imageability}, while others are not, like \textit{length}, \textit{arousal} and \textit{dominance}. Later this issue will be addressed with more depth.
+The plot in Figure \ref{fig:outliers} shows that some variables are well distributed, like \textit{concreteness} and \textit{imageability}, while others are not, like \textit{length}, \textit{arousal} and \textit{dominance}. This issue will be later addressed with more depth.
 
 \begin{figure}[h]
 \begin{minipage}[b]{.58\linewidth}
@@ -334,7 +334,7 @@ Another test was to compare the length of the values of the variable \textit{wor
 %PAROLE CHE SONO INDICATE COME POLISEMICHE MA NON LO SONO, OPPURE IL CONTRARIO
 %ALTRE COSE CHE NON CI VENGONO IN MENTE
 
-It is hard to define a semantic inconsistency, given that each word can be interpreted by the reader differently. There are many factors that can influence the understanding of the word such as  background, age, origin, education, income, social status etc. Therefore every variable is difficult to evaluate in an unbiased way. 
+It is hard to define a semantic inconsistency, given that each word can be interpreted differently by the reader. There are many factors that can influence the understanding of the word such as background, age, origin, education, income, social status etc. Therefore every variable is difficult to evaluate in an unbiased way. 
 
 The one variable that we chose to analyze is polysemy, given its greater objectivity. One can compare all the polysemic word with a definition in a dictionary to check if the word is actually polysemic. Our analysis led to no semantic inconsistencies.
 
@@ -344,15 +344,15 @@ We did not agree with some choices of the authors for the representation of the 
 
 \subsubsection{Gender}
 
-As already said, the variable \textit{gender} is not self intuitive.  A  supposition  is  that  the  higher  the  value,  the  more ``masculine'' the word is perceived. For this reason, it was decided to change the name of this variable to \textit{masculinity}.
+As already said, the variable \textit{gender} is not self intuitive.  An assumption is that  the  higher  the  value,  the  more "masculine'' the word is perceived. For this reason, it was decided to change the name of this variable to \textit{masculinity}.
 
 \subsubsection{Web Corpus Frequency}\label{discretize}
 
-The variable\textit{ Web Corpus Frequency} has a very vast range and does not have a easy comprehension on the linear scale. We decided to discretize the variable with the magnitude of the 10th power that corresponded to that word. For example, if a word occurs $7\cdot10^4$ times in the Google corpus the new value of the variable will be 4; if $web\_corpus\_freq=4\cdot 10^7$ the new value will be 7, and so on. The new range of the variable will be between 4 and 9. 
+The variable\textit{ Web Corpus Frequency} has a very vast range and does not have an easy comprehension on the linear scale. We decided to discretize the variable with a magnitude to the 10th power that corresponded to that word. For example, if a word occurs $7\cdot10^4$ times in the Google corpus the new value of the variable will be 4; if $web\_corpus\_freq=4\cdot 10^7$ the new value will be 7, and so on. The new range of the variable will be between 4 and 9. 
 
 \subsubsection{Normalization}\label{normalization}
 
-Given that each variable has a different range, it was chosen to normalize all the variables between 0 and 1 with algorithm MinMax, i.e. reshaping the array with new values. The new and transformed variables and normalized as well.
+Given that each variable has a different range, it was decided to normalize all the variables between 0 and 1 with the MinMax algorithm, i.e. reshaping the array with new values. The new and transformed variables and normalized as well.
 
 %VEDIAMO SE C'è QUALCOSA DA FARE OPPURE NO, AL LIMITE STA SEZIONE LA TOGLIAMO
 
@@ -416,11 +416,11 @@ Other positively correlated variables are \textit{valence} and \textit{dominance
 
 \subsection{Recap of the preprocessing}
 
-The preprocessing of the dataset is useful not only for a better visualization, but also to have a clean dataset to work with. 
+The preprocessing of the dataset is useful not only for a better visualization, but  to have a clean dataset to work with. 
 
 
 To define it, we will recap what we just did in this section.
-Firstly, we assure that there are no errors nor semantic inconsistencies. Then, we substitute the 14 missing values with the average of the missing variable. The variable \textit{gender} is renamed to \textit{masculinity} and the variable \textit{web corpus frequency} is discretized. We unify the variables \textit{concreteness} and \textit{imageability} in a new one \textit{perceivability} substituting the mean values of the two original ones. Finally, the whole dataset (except for the variable \textit{word}) is normalized between 0 and 1.
+First, we made sure that there were no errors or semantic inconsistencies. Then, we substituted the 14 missing values with the average of the missing variable. The variable \textit{gender} was renamed to \textit{masculinity} and the variable \textit{web corpus frequency} was discretized. We unified the variables \textit{concreteness} and \textit{imageability} in a new one, \textit{perceivability}, substituting the mean values of the two original ones. Finally, the whole dataset (except for the variable \textit{word}) was normalized between 0 and 1.
 \begin{comment}
 The first 5 rows of the dataset we used to perform our analysis are displayed in Figure \ref{fig:ultimate}.
 
@@ -434,10 +434,10 @@ The first 5 rows of the dataset we used to perform our analysis are displayed in
 
 \section{Clustering}
 
-To evaluate a cluster analysis three different algorithms are used. Both the algorithm and the obtained results will be described in the next sections.
+To evaluate a cluster analysis, three different algorithms are used. Both the algorithms and the obtained results will be described in the following sections.
 
 \subsection{Preprocessing}
-As discussed in the previous section, the dataframe has already been reduced and normalized to perform a better analysis. The last thing to do before moving forward is to drop the variable \textit{word}. The statistic of this dataset can be seen in Figure \ref{tab:stat2}.
+As discussed in the previous section, the dataframe has already been reduced and normalized to perform a better analysis. The last thing to do before moving forward is to drop the variable \textit{word}. The statistics of this dataset can be seen in Figure \ref{tab:stat2}.
 
 \begin{figure}[h]
     \centering
@@ -449,10 +449,10 @@ As discussed in the previous section, the dataframe has already been reduced and
 
 \subsubsection{Principal Component Analysis (PCA)}
 
-In order to reduce the dimensionality of the variables to use in the cluster analysis a Principal Component Analysis is performed. The variables are reduced to a dimension of 4682 rows x 2 columns.
+In order to reduce the dimensionality of the variables to use in the cluster analysis, a Principal Component Analysis is performed. The variables are reduced to a dimension of 4682 rows x 2 columns.
 
 \subsection{Clustering analysis by K-Means}
-The first clustering algorithm that we analyzed is \textit{K-Means}. It is one of the most known clustering algorithms. It is a simple unsupervised learning algorithm that is used to solve clustering problems. It follows a simple procedure of classifying a given dataset into a number of clusters, defined by the letter \textit{k}, which is fixed beforehand. The clusters are then positioned as points and all observations or data points are associated with the nearest cluster, computed, adjusted and then the process starts over using the new adjustments until a desired result is reached.
+The first clustering algorithm that we analyzed is \textit{K-Means}. It is one of the best known clustering algorithms. It is a simple unsupervised learning algorithm that is used to solve clustering problems. It follows a simple procedure of classifying a given dataset into a number of clusters, defined by the letter \textit{k}, which is fixed beforehand. The clusters are then positioned as points and all observations or data points are associated with the nearest cluster, computed and adjusted. Then the process starts over using the new adjustments until a desired result is reached.
 
 \subsubsection{Identifying the optimal number of clusters}
 Since the number of clusters for this algorithm is fixed beforehand, it becomes essential to identify the optimal quantity of clusters. This task can be done in a variety of ways.
@@ -544,7 +544,7 @@ In the end, it was decided to set on $\varepsilon= 0.018$ and MinPts = 20, for a
 \end{figure}
 
 \subsection{Analysis by Hierarchical Clustering}
-Hierarchical clustering is a group of unsupervised learning algorithms that merges or splits the clusters in sequence. This process can be visualized in a diagram structured as a tree, the \textit{dendrogram}. 
+Hierarchical clustering is a group of unsupervised learning algorithms that merge or split the clusters in sequence. This process can be visualized in a diagram structured as a tree, the \textit{dendrogram}. 
 
 The agglomerative techniques are the most common: at first, each point represents a single cluster and then, step by step, the clusters are merged according to the distance between them. In particular, we chose the Euclidean distance. 
 
@@ -584,11 +584,11 @@ The distance can be defined with different criteria:
 \end{figure}
 
 
-The \textit{dendograms} show that the \textit{Single Link} method gives us the worst result, with one big cluster that includes the majority of the points (regardless the number of clusters we set), whereas \textit{Complete} and \textit{Average} linkage are more balanced. As expected, however the most balanced is \textit{Ward's method}, given the nature of the algorithm. 
+The \textit{dendograms} show that the \textit{Single Link} method gives us the worst result, with one big cluster that includes the majority of the points (regardless of the number of clusters we set), whereas \textit{Complete} and \textit{Average} linkage are more balanced. As expected, however the most balanced is \textit{Ward's method}, given the nature of the algorithm. 
  
- \textit{Single Link} method does not give much information, while \textit{Ward's Method} leads a very similar analysis to K-Means. For this reason we opted to draw the scatter plot of the \textit{Complete} and \textit{Average} linkage, choosing respectively to cut at 6 and 7 clusters.
+ \textit{Single Link} method does not give much information, while \textit{Ward's Method} leads to a very similar analysis as that of K-Means. For this reason we decided to plot the scatterplot of the \textit{Complete} and \textit{Average} linkage, choosing respectively to cut at 6 and 7 clusters.
  
- The result of the clustering can be seen in Figure \ref{fig:hierach}.
+ The results of the clustering can be seen in Figure \ref{fig:hierach}.
  
 \begin{figure}[h]
     \centering
@@ -612,7 +612,7 @@ The \textit{dendograms} show that the \textit{Single Link} method gives us the w
 
 To validate each cluster algorithm, we decided to use two different test scores:
 \begin{itemize}
-    \item the \textbf{Silhouette Score:} it estimates the distances between clusters and provides a number between -1 and 1. Whereas: \textbf{1} means clusters are well apart from each other and clearly distinguished; \textbf{0} means clusters are indifferent, or we can say that the distance between clusters is not significant; \textbf{-1} means clusters are assigned in the wrong way.
+    \item the \textbf{Silhouette Score:} it estimates the distances between clusters and provides a number between -1 and 1. Whereas: \textbf{1} means that the clusters are well apart from each other and clearly distinguished; \textbf{0} means that the clusters are indifferent, or we can say that the distance between clusters is not significant; \textbf{-1} means that the clusters are assigned in the wrong way.
     %\begin{itemize}
     %\item[] 
     %\end{itemize}
@@ -635,7 +635,7 @@ As a drawback, both the test scores are generally higher for convex clusters tha
     \label{tab:scores}
 \end{table}
 
-According to the values in the Table \ref{tab:scores}, K-Means has the better scores among the three algorithms. But we have to take in consideration that the high value of the coefficients for the K-Means algorithm may be biased given the low number of clusters used (i.e. 3).
+According to the values in the Table \ref{tab:scores}, K-Means has the best scores among the three algorithms. But we have to take into consideration that the high value of the coefficients for the K-Means algorithm may be biased due to the low number of clusters used (i.e. 3).
 \begin{figure}[h]
     \begin{minipage}{0.47\linewidth}
             \centering
@@ -653,35 +653,32 @@ According to the values in the Table \ref{tab:scores}, K-Means has the better sc
 \end{figure}
 
 
-In addition, one can perform an analysis looking at the boxplots of the variables according to the assigned cluster. The obtained results are showed in Figure \ref{fig:boxcluster}.
+Additionally, one can perform an analysis by looking at the boxplots of the variables according to the assigned cluster. The obtained results are showed in Figure \ref{fig:boxcluster}.
 
 
-This kind of analysis is useful to determinate some key characteristics of some clusters. 
+This kind of analysis is useful to determinate some key characteristics of the clusters. 
 
-For instance, in the K-Means analysis (Fig. \ref{fig:boxclukmeans}) the Second cluster has a low value for \textit{Web Corpus Freq}, high value for aoa, and low value for \textit{Familiarity}. This indicates that the words that belongs to this cluster may be difficult words, and for that reason are not commonly used. To cross check this analysis one can see some words of this cluster (e.g. \textit{abbey}, \textit{zeal}), and they confirm this hypothesis.
+For instance, in the K-Means analysis (Fig. \ref{fig:boxclukmeans}) the Second cluster has a low value for \textit{Web Corpus Freq}, high value for \textit{AoA}, and low value for \textit{Familiarity}. This indicates that the words that belong to this cluster may be difficult words, and for that reason they are not commonly used. To cross check this analysis one can see some words of this cluster (e.g. \textit{abbey}, \textit{zeal}), which confirm this hypothesis.
 Some of these words are classified by the Hierarchical Clustering (Figure \ref{fig:boxcluhier}) algorithm in the Fourth cluster, which has similar characteristics to the Second cluster of K-Means.
 
-On the other hand, the words of the Third Cluster of Hierarchical Clustering have high valence, high dominance, high semsize and low perceivability. These properties may indicate that this cluster contains words that convey a high (emotional) impact. Finally, the Sixth cluster may represent words that are easy, short and acquired in early age.
+Conversely, the words of the Third Cluster of Hierarchical Clustering have high valence, high dominance, high semsize and low perceivability. These properties may indicate that this cluster contains words that convey a high (emotional) impact. Finally, the Sixth cluster may represent words that are easy, short and acquired in early age.
 
 
 \section{Classification}
 
-The classification task was performed using three different methods, that will be described in next sections. Before that, we briefly expose the data preprocess used for this analysis.  
+The classification task was performed using three different methods, which will be described in following sections. Before that, we briefly expose the data preprocessing used for this analysis.  
 
 \subsection{Preprocessing}
 
-As described in the first section of the report, we decided use our transformed dataset. 
+Similarly to the cluster section, we decided to use our transformed dataset, described in Figure \ref{tab:stat2}. 
 
-However, for the classification process the parameters excluded from the normalization are \textit{length} and \textit{web\_corpus\_frequency}, which remain discrete variables.
+However, for the classification process the parameters excluded from the normalization are \textit{length} and \textit{web\_corpus\_frequency}, which remain discrete.
 
-\subsection{Decision Trees}\label{sec:decisio-tree}
+Once chosen, the target variable is removed from the dataset and stored in another array. The choice and handling of this variable is described in section \ref{target_dt}. It is also necessary to split the dataset in a training and a testing set, respectively 70\% and 30\% of the total, which remain the same for the three analyzed algorithms.
 
-According to the scikit-learn documentation, \textit{Decision Trees (DTs) are a non-parametric supervised learning method used for classification and regression}\cite{JMLR:v12:pedregosa11a}. The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features.
+\subsection{Decision Trees}\label{sec:decisio-tree}\label{sec:building_tree}
 
-
-\subsubsection{Building the tree - Description of the process}\label{sec:building_tree}
-
-The first step needed for building the tree is the choice of the target variable, which is then removed from the dataset and stored in array \textit{y}. The remainder of the dataset compose a structure \textit{X}.
+According to the scikit-learn documentation, Decision Trees (DTs) are a \textit{non-parametric supervised learning method used for classification and regression}\cite{JMLR:v12:pedregosa11a}. The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features.
 
 \begin{figure}[h]
 \begin{minipage}{0.7\linewidth}
@@ -696,18 +693,14 @@ The first step needed for building the tree is the choice of the target variable
             \includegraphics[width=0.9\textwidth]{arousal_overfit_ROC.png}
             \subcaption{ROC curve for the testing set}\label{overroc}
     \end{minipage}
-    \caption{Tree and ROC for target variable \textit{arousal}}
+    \caption{Unpruned tree and ROC for target variable \textit{arousal}}\label{overfit}
 \end{figure}
 
+If we build the tree in a naive way, using the algorithm with the default parameters (Gini impurity measure, max\_depth=0, etc...), we obtain a very complex tree (Figure \ref{fig:overfit_tree}). This tree is overfitted and therefore does not perform well on the testing set, as seen in the ROC curve in Figure \ref{overroc}.
 
-The second step is the splitting of the dataset in a training and a testing set, respectively 70\% and 30\% of the total. 
+To avoid this behavior, we can introduce the parameter \textit{Cost Complexity Pruning} (CCP) $\alpha$, which prevent the tree from overfitting. This parameter is particularly useful because the tuning of the other parameters (\textit{Max Depth}, \textit{Min Samples Leaf}, etc.) is not necessary anymore.
 
-Then, a first tree is built based on the training set, using the algorithm with the default parameters (Gini impurity measure, max\_depth=0, etc...).
-
-
-The obtained tree (Figure \ref{fig:overfit_tree}) is very complex and is clearly an overfit for the used dataset. Therefore, it does not perform well on the testing set, as seen in the ROC curve in Figure \ref{overroc}.
-
-To avoid this behavior, we can introduce the parameter \textit{cost complexity pruning} $\alpha$, which prevent the tree from overfitting. This parameter is particularly useful because the tuning of the other parameters (\textit{Max Depth}, \textit{Min Samples Leaf}, etc.) is not necessary anymore.
+The choice of the value of the parameter $\alpha$ is determined by varying it over several attempts and calculating the tree score for the training set as well as the testing set, as shown in Figure \ref{fig:alpha_accuracy}. To avoid statistical errors, the whole process is repeated, performing a 10-fold cross validation. Finally, the mean accuracy value for the testing and training set is calculated with a 10-fold cross validation varying $\alpha$, as shown in Figure \ref{fig:mean_accuracy}.
 
 \begin{figure}[h]
 \begin{minipage}{0.5\linewidth}
@@ -726,32 +719,64 @@ To avoid this behavior, we can introduce the parameter \textit{cost complexity p
     \caption{Plots for the cost complexity pruning}
 \end{figure}
 
-The choice of the value of the parameter $\alpha$ is determined by varying it over several attempts and calculating the tree score for the training set as well as the testing set, as shown in Figure \ref{fig:alpha_accuracy}. To avoid statistical errors, the whole process is repeated, performing a 10-fold cross validation. Finally, the mean accuracy value for the testing and training set is calculated with a 10-fold cross validation varying $\alpha$, as shown in Figure \ref{fig:mean_accuracy}.
-Based on these results, we choose the $\alpha$ that maximizes the accuracy and we build a new pruned tree using this parameter, as shown in Figure \ref{fig:pruned}. The pruned tree is simpler and performs better, as seen in its ROC and AUC of Figure 
+Based on these results, we choose the $\alpha$ that maximizes the accuracy and we build a new pruned tree using this parameter. As shown in Figure \ref{fig:pruned_ccp}, the new tree is simpler and performs better.
 
 \begin{figure}[h]
+\centering
+\begin{minipage}{0.49\linewidth}
     \centering
-    \includegraphics[width=0.65\textwidth]{pruned_tree_arousal.png}
-    \caption{Pruned Tree for \textit{arousal}}
-    \label{fig:pruned}
+    \includegraphics[width=\textwidth]{pruned_tree_arousal.png}
+    \subcaption{CCP}
+    \label{fig:pruned_ccp}
+    \end{minipage}\hfil
+    \begin{minipage}{0.48\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{pruned_tree_citraro.png}
+    \subcaption{Grid Search}
+    \label{fig:pruned_grid}
+    \end{minipage}
+    \caption{Pruned Trees}
 \end{figure}
+This analysis is performed with both the \textit{gini} and \textit{entropy} impurity measures. The results obtained with this classification algorithm will be discussed in the following sections.
 
-An alternative to this method is the search for the best parameters using a grid search. The accuracy and the other test scores obtained are very similar, but the complexity of the tree is higher. For this reason we opted for the cost complexity pruning method, tuning the parameter $\alpha$.
+An alternative to this method is a \textit{grid search} for the best parameters (\textit{Max Depth, Min Samples Split, Min Samples Leaf}) using the F1 score as measure. With the grid search, the accuracy and the other test scores obtained are similar to the ones for CCP, but the complexity of the tree is higher, as shown in Figure \ref{fig:pruned_grid}. For this reason we opted for the cost complexity pruning method, tuning the parameter $\alpha$.
 
 
-\subsubsection{Choice of target variable}\label{target_dt}
 
-The provided dataset is not meant to have a specific target variable. For that reason, we perform the analysis described in the previous section for every single parameter. We decided to divide them into \textit{binary} and \textit{multi-split} target variables. 
 
-\paragraph{Binary target variables} are obtained from continuous variables by setting a threshold. The values under the threshold are set to 0, while the value above are set to 1. The thresholds for each variable are chosen according to the last quartile. We report the values in Table \ref{tab:threshold}.
+\subsection{Random Forest}
+
+Decision Trees are a useful tool for classification because of their simplicity, but they present problems when it comes to classifying a new set. An improvement of this algorithm may be the Random Forest. This method consists in creating different bootstrapped datasets from the training sets and creating for each one a decision tree (more generally, an \textit{estimator}), as described in section \ref{sec:decisio-tree}, without tuning the parameters. Then, each record will be evaluated by every tree (a.k.a. by the \textit{forest}) and classified according to the majority of the outputs.
+
+To determine the number of estimators we run different simulations and pick the value with the lowest \textit{Out Of Bag error}, i.e. the misclassification error on the records that did not enter the bootstrapped dataset.
+
+%We applied Random Forest on the most interesting variables, as mentioned above: \textit{Valence}, \textit{Polysemy} and \textit{Age of Acquisition}. 
+Taking the confusion matrices and the scores table into consideration, the results will be commented in the conclusion section.
+
+
+\subsection{K - Nearest Neighbors}
+The last classification algorithm we used is K-Nearest Neighbors (KNN). With this method, the target variable is classified by the majority of votes of its $k^{th}$ neighbors. If, for example, the majority of neighbors of a new record belong to class 1, the new item will be classified as 1 as well.  
+
+%KNN works by firstly i.e. "classification is computed from a simple majority vote of the nearest neighbors of each point: a query point is assigned the data class which has the most representatives within the nearest neighbors of the point."\cite{JMLR:v12:pedregosa11a}. 
+
+%We applied KNN on the fore mentioned variables: \textit{Valence}, \textit{Polysemy} and \textit{Age of Acquisition}. 
+To determine optimal k, we iterate the algorithm for each variable over several values of k and pick the one that maximizes the accuracy. The most accurate value for k depends on the target variable. The results will be commented in the next sections.
+
+
+
+\subsection{Choice of target variable}\label{target_dt}
+
+The provided dataset is not meant to have a specific target variable. For that reason, we perform the analysis described in the previous sections for every single parameter. We decided to divide them into \textit{binary} and \textit{multi-split} target variables. 
+
+\paragraph{Binary target variables} are obtained from continuous variables by setting a threshold. The values under the threshold are labeled as 0, while those above are labeled as 1. The thresholds for each variable are chosen according to the last quartile. We report the values of the thresholds in Table \ref{tab:threshold}.
 
 \begin{table}[h]
 \adjustbox{max width=\textwidth}{%
     \centering
     \begin{tabular}{|r|c|c|c|c|c|c|c|c|c|}
     \hline
-        & Arousal & Valence & Dominance & Familiarity & Size & Masculinity & Polysemy & Aoa & Perceivability\\\hline
-        \textbf{Threshold} & 0.55 & 0.67 & 0.57 & 0.60 & 0.63 & 0.60 & 0.50 & 0.60 & 0.80\\
+        & Arousal & Valence & Dominance & Familiarity & Size & Masculinity & Polysemy & Perceivability & Aoa\\\hline
+        \textbf{Threshold} & 0.55 & 0.67 & 0.57 & 0.60 & 0.63 & 0.60 & 0.50 & 0.80 & 0.60\\
         \hline
     \end{tabular}
     }
@@ -759,233 +784,48 @@ The provided dataset is not meant to have a specific target variable. For that r
     \end{table}
 
 
-For each variable we build a pruned tree and compare the ROC and AUC (shown in Figure \ref{fig:roc}), the accuracy, the F1 score, precision and recall (Table \ref{tab:class_scores}).
-
-
-\begin{figure}[h]
-\centering
-\begin{minipage}[b]{.3\linewidth}
-\centering\large \includegraphics[width=0.8\linewidth]{arousal_ROC.png}
-\subcaption{Arousal}\label{fig:arroc}
-\end{minipage}%
-    \hfil
-\begin{minipage}[b]{.3\linewidth}
-\centering\includegraphics[width=0.8\linewidth]{valence_ROC.png}\subcaption{Valence}\label{fig:valroc}
-\end{minipage}    \hfil
-\begin{minipage}[b]{.3\linewidth}
-\centering\includegraphics[width=0.8\linewidth]{dominance_ROC.png}\subcaption{Dominance}\label{fig:domroc}
-\end{minipage}
-
-\begin{minipage}[b]{.3\linewidth}
-\centering\large \includegraphics[width=0.8\linewidth]{familiarity_ROC.png}
-\subcaption{Familiarity}\label{fig:famroc}
-\end{minipage}%
-    \hfil
-\begin{minipage}[b]{.3\linewidth}
-\centering\includegraphics[width=0.8\linewidth]{semsize_ROC.png}\subcaption{Semantic Size}\label{fig:semroc}
-\end{minipage}    \hfil
-\begin{minipage}[b]{.3\linewidth}
-\centering\includegraphics[width=0.8\linewidth]{masculinity_ROC.png}\subcaption{Masculinity}\label{fig:masroc}
-\end{minipage}
-
-\begin{minipage}[b]{.3\linewidth}
-\centering\includegraphics[width=0.8\linewidth]{polysemy_ROC.png}\subcaption{Polysemy}\label{fig:polroc}
-\end{minipage}    \hfil
-\begin{minipage}[b]{.3\linewidth}
-\centering\large \includegraphics[width=0.8\linewidth]{aoabinary_ROC.png}
-\subcaption{Age of Acquisition}\label{fig:aoabinroc}
-\end{minipage}    \hfil
-\begin{minipage}[b]{.3\linewidth}
-\centering\includegraphics[width=0.8\linewidth]{perceivability_ROC.png}\subcaption{Perceivability}\label{fig:perroc}
-\end{minipage}
-
-
-\caption{ROC and AUC of variables}\label{fig:roc}
-
-\end{figure}
-
-%Tabella con accuracy, f1 score, etc
+The accuracy, precision, recall and F1 score of the Decision Tree using the \textit{entropy} criterion for each variable are shown in Table \ref{tab:class_scores}.
 
 \begin{table}[h]
-\adjustbox{max width=\textwidth}{%
     \centering
+\adjustbox{max width=\textwidth}{%
     \begin{tabular}{|r|c|c|c|c|c|c|c|c|c|}
     \hline
-        & Arousal & Valence & Dominance & Familiarity & Size & Masculinity & Polysemy & Perceivability & Aoa\\\hline\hline
+                    & Arousal & Valence & Dominance & Familiarity & Size & Masculinity & Polysemy & Perceivability & Aoa\\\hline\hline
         
-        \textbf{Accuracy} & 0.83 & 0.88 & 0.83 & 0.81 & 0.80 & 0.78 & 0.93 & 0.82 & 0.80\\\hline
+        \textbf{Accuracy}             & 0.83 & 0.87 & 0.82 & 0.82 & 0.80 & 0.76 & 0.93 & 0.81 & 0.81\\\hline
         
-        \textbf{Precision (0)} & 0.85 & 0.89 & 0.86 & 0.64 & 0.82 & 0.83 & 0.93 & 0.85 & 0.81\\
-        \textbf{Precision (1)} & 0.75 & 0.83 & 0.70 & 0.88 & 0.70 & 0.57 & 0.00 & 0.73 & 0.80\\
-        \textbf{Precision (mean)} & 0.82 & 0.87 & 0.82 & 0.82 & 0.76 & 0.69 & 0.87 & 0.82 & 0.80\\\hline
+        \textbf{Precision (0)}        & 0.85 & 0.79 & 0.87 & 0.71 & 0.82 & 0.85 & 0.93 & 0.84 & 0.83\\
+        \textbf{Precision (1)}        & 0.75 & 0.89 & 0.66 & 0.85 & 0.66 & 0.52 & 0.00 & 0.68 & 0.79\\
+        \textbf{Precision (wgt mean)} & 0.86 & 0.86 & 0.82 & 0.82 & 0.78 & 0.77 & 0.87 & 0.80 & 0.81\\\hline
         
-        \textbf{Recall (0)} & 0.94 & 0.95 & 0.92 & 0.69 & 0.94 & 0.88 & 1.00 & 0.92 & 0.90\\
-        \textbf{Recall (1)} & 0.52 & 0.66 & 0.56 & 0.86 & 0.41 & 0.46 & 0.0 & 0.57 & 0.64\\
-        \textbf{Recall (mean)} & 0.83 & 0.88 & 0.83 & 0.81 & 0.80 & 0.78 & 0.93 & 0.82 & 0.80\\\hline
+        \textbf{Recall (0)}           & 0.94 & 0.94 & 0.89 & 0.58 & 0.92 & 0.82 & 1.00 & 0.90 & 0.89\\
+        \textbf{Recall (1)}           & 0.52 & 0.67 & 0.61 & 0.91 & 0.44 & 0.58 & 0.0  & 0.55 & 0.69\\
+        \textbf{Recall (wgt mean)}    & 0.87 & 0.87 & 0.82 & 0.82 & 0.80 & 0.76 & 0.93 & 0.81 & 0.81\\\hline
         
-        \textbf{F1 score (0)} & 0.89 & 0.92 & 0.89 & 0.67 & 0.87 & 0.85 & 0.96 & 0.88 & 0.85\\
-        \textbf{F1 score (1)} & 0.61 & 0.74 & 0.62 & 0.87 & 0.51 & 0.51 & 0.00 & 0.64 & 0.71\\
-        \textbf{F1 score (mean)} & 0.82 & 0.87 & 0.82 & 0.81 & 0.78 & 0.77 & 0.90 & 0.82 & 0.80\\\hline
+        \textbf{F1 score (0)}         & 0.89 & 0.91 & 0.88 & 0.64 & 0.87 & 0.84 & 0.96 & 0.87 & 0.86\\
+        \textbf{F1 score (1)}         & 0.61 & 0.73 & 0.63 & 0.88 & 0.53 & 0.55 & 0.00 & 0.61 & 0.73\\
+        \textbf{F1 score (wgt mean)}  & 0.86 & 0.86 & 0.82 & 0.82 & 0.78 & 0.76 & 0.90 & 0.80 & 0.81\\\hline
         
     \end{tabular}
     }
-            \caption{Score values for binary target variables}\label{tab:class_scores}
+            \caption{Score values of DT for binary target variables, wheares the mean is weighted on the support.}\label{tab:class_scores}
 
     \end{table}
-
-Based on the ROCs, their area under the curves, the accuracy and the other scores, the most interesting parameter appears to be \textit{Valence}. In addition, we chose to focus on the variables \textit{Age of Acquisition} because we can also perform a multi-split analysis, and \textit{Polysemy} because it is already a binary variable. 
-Taking into consideration also the confusion matrices, the results will be commented in the conclusion section.
-
-
-\paragraph{Multi-split target variables} are \textit{Web Corpus Frequency} and \textit{Age of Acquisition}. 
-
-The variable \textit{Web Corpus Frequency} has already been discretized in the section \ref{discretize}.
-
-The variable \textit{Age of Acquisition} can be seen as a discrete variable, truncating the original values. In this way, we obtained a binned parameter between 1 and 6, which represents the age in which the word was learned (as described in section \ref{semantic}).
-
-Given the multi-output, the ROC curve is misdefined and for this reason we decided not to draw it. We report directly the Confusion Matrices in Figure \ref{aoa_multi}.
-
-
-\begin{figure}[h]
-  \begin{minipage}{.4\linewidth}
-    \centering
-    \includegraphics[width=\textwidth]{aoa_multi_confusion_matrix.png}%
-  \end{minipage}
-  \begin{minipage}{.2\linewidth}
-    \centering
-\begin{tabular}{|r|c|c|c|c|}
-\toprule
-{} &  Precision &    Recall &  F1-Score &      Support \\
-\midrule\midrule
-0-2          &   0.297297 &  0.268293 &  0.282051 &    41.000000 \\
-2-4          &   0.549180 &  0.551440 &  0.550308 &   243.000000 \\
-4-6          &   0.360544 &  0.407692 &  0.382671 &   260.000000 \\
-6-8          &   0.419795 &  0.421233 &  0.420513 &   292.000000 \\
-8-10          &   0.456522 &  0.421687 &  0.438413 &   249.000000 \\
-10-12         &   0.506849 &  0.430233 &  0.465409 &    86.000000 \\
-accuracy     &   0.440649 &  0.440649 &  0.440649 &     0.440649 \\
-macro avg    &   0.431698 &  0.416763 &  0.423228 &  1171.000000 \\
-weighted avg &   0.443403 &  0.440649 &  0.441301 &  1171.000000 \\
-\bottomrule
-\end{tabular}
-
-  \end{minipage}
-  
-  \caption{Confusion Matrix and score values for Age of Acquisition} \label{aoa_multi}
-\end{figure}
-
-\begin{comment}
-\begin{figure}[h]
-  \begin{minipage}{.4\linewidth}
-    \centering
-    \includegraphics[width=\textwidth]{web_confusion_matrix.png}%
-  \end{minipage}
-  \begin{minipage}{.2\linewidth}
-    \centering
-\begin{tabular}{|r|c|c|c|c|}
-\toprule
-{} &  Precision &    Recall &  F1-Score &      Support \\
-\midrule
-4.0          &   0.000000 &  0.000000 &  0.000000 &    12.000000 \\
-5.0          &   0.462264 &  0.288235 &  0.355072 &   170.000000 \\
-6.0          &   0.550907 &  0.742481 &  0.632506 &   532.000000 \\
-7.0          &   0.533528 &  0.491935 &  0.511888 &   372.000000 \\
-8.0          &   0.200000 &  0.012048 &  0.022727 &    83.000000 \\
-9.0          &   0.000000 &  0.000000 &  0.000000 &     2.000000 \\
-accuracy     &   0.536294 &  0.536294 &  0.536294 &     0.536294 \\
-macro avg    &   0.291116 &  0.255783 &  0.253699 &  1171.000000 \\
-weighted avg &   0.501058 &  0.536294 &  0.503129 &  1171.000000 \\
-\bottomrule
-\end{tabular}
-
-  \end{minipage}
-  
-  \caption{Confusion Matrix and score values for Web Corpus Frequency} \label{wcf_multi}
-\end{figure}
-\end{comment}
-
-
-As seen in the Tables and more specifically in the confusion matrix of Figures \ref{aoa_multi}, these results are not really useful. The results for \textit{Web Corpus Frequency} are not reported because they were not found of interest, given their low accuracy. For this reason, they will not be discussed in the conclusions.
-
-
-\subsection{Random Forest}
-
-Decision Trees are an useful tool for classification because of their simplicity, but they present problems when it comes to classify a new set. An improvement of this algorithm may be the Random Forest. This method consists in creating different bootstrapped datasets from the training sets and creating for each one a decision tree (more generally, an \textit{estimator}), as described in section \ref{sec:decisio-tree} without tuning the parameters. Then, each record will be evaluated by every tree (a.k.a. the \textit{forest}) and classified according to the majority of the outputs.
-
-To the determine the number of estimators we run different simulations and pick the value with the lowest \textit{Out Of Bag error}, i.e. the misclassification error on the records that did not enter the bootstrapped dataset.
-
-We applied Random Forest on the most interesting variables, as mentioned above: \textit{Valence}, \textit{Polysemy} and \textit{Age of Acquisition}. 
-
-Taking into consideration also the confusion matrices, the results will be commented in the conclusion section.
-
-\begin{comment}
-ROC curves for the target variables can be seen in Figure \ref{fig:roc_randomforest}.
-
-\begin{figure}[h]
-\begin{minipage}{0.32\linewidth}
-    \centering
-    \includegraphics[width=0.8\textwidth]{rf_valence_roc.png}
-    \subcaption{Valence}
-\end{minipage}
-\hfil
-\begin{minipage}{0.32\linewidth}
-    \centering
-    \includegraphics[width=0.8\textwidth]{rf_pol_roc.png}
-    \subcaption{Polysemy}
-    \end{minipage}
-    \hfil
-    \begin{minipage}{0.32\linewidth}
-    \centering
-    \includegraphics[width=0.8\textwidth]{rf_aoa_roc.png}
-    \subcaption{Age of Acquisition}
-\end{minipage}
-
-    \caption{ROC curves for target variables using Random Forest}
     
-    \label{fig:roc_randomforest}
-\end{figure}
-\end{comment}
-
-\subsection{K - Nearest Neighbors}
-The last classification algorithm we used is K-Nearest Neighbors, i.e. "classification is computed from a simple majority vote of the nearest neighbors of each point: a query point is assigned the data class which has the most representatives within the nearest neighbors of the point."\cite{JMLR:v12:pedregosa11a}. 
-
-We applied KNN on the fore mentioned variables: \textit{Valence}, \textit{Polysemy} and \textit{Age of Acquisition}. To determinate the optimal k, we iterate the algorithm over several values of k. The most accurate value for k depends on the target variable and is respectively 6, 32, 6. 
-
-Taking into consideration also the confusion matrices, the results will be commented in the conclusion section.
-
-
-\begin{comment}
-ROC curves for the target variables can be seen in Figure \ref{fig:roc_knn}.
-
-\begin{figure}[h]
-\begin{minipage}{0.32\linewidth}
-    \centering
-    \includegraphics[width=0.8\textwidth]{knn_val_roc.png}
-    \subcaption{Valence}
-\end{minipage}
-\hfil
-\begin{minipage}{0.32\linewidth}
-    \centering
-    \includegraphics[width=0.8\textwidth]{knn_pol_roc.png}
-    \subcaption{Polysemy}
-    \end{minipage}
-    \hfil
-    \begin{minipage}{0.32\linewidth}
-    \centering
-    \includegraphics[width=0.8\textwidth]{knn_aoa_roc.png}
-    \subcaption{Age of Acquisition}
-\end{minipage}
-
-    \caption{ROC curves for target variables using KNN}
     
-    \label{fig:roc_knn}
-\end{figure}
-\end{comment}
+    Based on these results, we chose to focus our analysis on three variables. The most interesting one appears to be \textit{Valence}, given its high scores. In addition, we analyze \textit{Age of Acquisition} since the comparison with the multi-split analysis may be interesting. \textit{Polysemy} is a variable to considerate because it is already binary.
+    
+    The scores of Random Forest and KNN for these variables are shown in the Tables \ref{tab:rf_scores} and \ref{tab:knn_scores}, respectively. The number of k used in the KNN algoithm is 6 for \textit{Valence}, 6 for \textit{AoA} and 3 for \textit{Polysemy}.
+    
+Taking also into consideration the confusion matrices, the results will be commented in the conclusion section.
+    
+%Tabella con accuracy, f1 score, etc
 
-\begin{minipage}{0.5\linewidth}
+\begin{minipage}{0.49\linewidth}
     \centering
     \begin{table}[H]
-\adjustbox{max width=\textwidth}{%
+
     \centering
     \begin{tabular}{|r|c|c|c|}
     \hline
@@ -995,26 +835,25 @@ ROC curves for the target variables can be seen in Figure \ref{fig:roc_knn}.
         
         \textbf{Precision (0)} & 0.89 & 0.93 & 0.83\\
         \textbf{Precision (1)} & 0.85 & 0.33 & 0.80\\
-        \textbf{Precision (mean)} & 0.88 & 0.89 & 0.82\\\hline
+        \textbf{Weighted mean} & 0.88 & 0.89 & 0.82\\\hline
         
         \textbf{Recall (0)} & 0.96 & 1.0 & 0.90\\
         \textbf{Recall (1)} & 0.67 & 0.01 & 0.68\\
-        \textbf{Recall (mean)} & 0.88 & 0.93 & 0.82\\\hline
+        \textbf{Weighted mean} & 0.88 & 0.93 & 0.82\\\hline
         
         \textbf{F1 score (0)} & 0.92 & 0.96 & 0.86\\
         \textbf{F1 score (1)} & 0.75 & 0.02 & 0.74\\
-        \textbf{F1 score (mean)} & 0.87 & 0.90 & 0.82\\\hline
+        \textbf{Weighted mean} & 0.87 & 0.90 & 0.82\\\hline
         
     \end{tabular}
-    \label{tab:rf_scores}
-    }
-            \caption{Score values for Random Forest}
+            \caption{Score values of Random Forest}\label{tab:rf_scores}
     \end{table}
     \end{minipage}
-   \begin{minipage}{0.5\linewidth}
+    \hfil
+   \begin{minipage}{0.49\linewidth}
     \centering
         \begin{table}[H]
-\adjustbox{max width=\textwidth}{%
+
     \centering
     \begin{tabular}{|r|c|c|c|}
     \hline
@@ -1024,24 +863,30 @@ ROC curves for the target variables can be seen in Figure \ref{fig:roc_knn}.
         
         \textbf{Precision (0)} & 0.87 & 0.96 & 0.81\\
         \textbf{Precision (1)} & 0.92 & 0.70 & 0.88\\
-        \textbf{Precision (mean)} & 0.88 & 0.94 & 0.84\\\hline
+        \textbf{Weighted mean} & 0.88 & 0.94 & 0.84\\\hline
         
         \textbf{Recall (0)} & 0.98 & 0.99 & 0.95\\
         \textbf{Recall (1)} & 0.58 & 0.38 & 0.63\\
-        \textbf{Recall (mean)} & 0.88 & 0.95 & 0.83\\\hline
+        \textbf{Weighted mean} & 0.88 & 0.95 & 0.83\\\hline
         
         \textbf{F1 score (0)} & 0.92 & 0.97 & 0.87\\
         \textbf{F1 score (1)} & 0.71 & 0.49 & 0.73\\
-        \textbf{F1 score (mean)} & 0.87 & 0.94 & 0.82\\\hline
+        \textbf{Weighted mean} & 0.87 & 0.94 & 0.82\\\hline
         
     \end{tabular}
-    }
-            \caption{Score values for KNN}    \label{tab:knn_scores}
+            \caption{Score values of KNN}    \label{tab:knn_scores}
 
     \end{table}
 \end{minipage}
 
-\paragraph{Multi-split AoA} is a variable to consider in the KNN section, because this algorithm perform well with multi-split target variable. The analysis performed with K=14 is summarized in Figure \ref{aoa_multi_KNN}.
+
+\paragraph{Multi-split target variables} are \textit{Web Corpus Frequency} and \textit{Age of Acquisition}. 
+
+The variable \textit{Web Corpus Frequency} has already been discretized in the section \ref{discretize}.
+
+The variable \textit{Age of Acquisition} can be seen as a discrete variable, truncating the original values. In this way, we obtain a binned parameter between 1 and 6, which represents the age in which the word was learned (as described in section \ref{semantic}).
+
+Given the multi-output, the ROC curve is misdefined and for this reason we decided not to draw it. We report the Confusion Matrices directly in Figure \ref{aoa_multi}.
 
 \begin{figure}[h]
   \begin{minipage}{.4\linewidth}
@@ -1050,77 +895,159 @@ ROC curves for the target variables can be seen in Figure \ref{fig:roc_knn}.
   \end{minipage}
   \begin{minipage}{.2\linewidth}
     \centering
+
 \begin{tabular}{|r|c|c|c|c|}
 \toprule
-{} &  Precision &    Recall &  F1-Score &      Support \\
+{} &  \textbf{Precision} &    \textbf{Recall} &  \textbf{F1-Score} &      \textbf{Support} \\
 \midrule\midrule
-0-2          &   0.333333 &  0.146341 &  0.203390 &    41.000000 \\
-2-4          &   0.561594 &  0.637860 &  0.597303 &   243.000000 \\
-4-6          &   0.424354 &  0.442308 &  0.433145 &   260.000000 \\
-6-8          &   0.461300 &  0.510274 &  0.484553 &   292.000000 \\
-8-10          &   0.549180 &  0.538153 &  0.543611 &   249.000000 \\
-10-12          &   0.666667 &  0.302326 &  0.416000 &    86.000000 \\
-accuracy     &   0.499573 &  0.499573 &  0.499573 &     0.499573 \\
-macro avg    &   0.499405 &  0.429544 &  0.446333 &  1171.000000 \\
-weighted avg &   0.503198 &  0.499573 &  0.494215 &  1171.000000 \\
+label 0-2     &   0.30 &  0.27 &  0.28 &    41 \\
+label 2-4     &   0.55 &  0.55 &  0.55 &   243 \\
+label 4-6     &   0.36 &  0.41 &  0.38 &   260 \\
+label 6-8     &   0.42 &  0.42 &  0.42 &   292 \\
+label 8-10    &   0.46 &  0.42 &  0.44 &   249 \\
+label 10-12   &   0.51 &  0.43 &  0.47 &    86 \\\hline
+%\textbf{macro avg}    &   0.43 &  0.42 &  0.42 &  1171 \\
+\textbf{weighted avg} &   0.44 &  0.44 &  0.44 &  1171 \\
+\textbf{accuracy}     &   0.44 &  0.44 &  0.44 &     0.44 \\
 \bottomrule
 \end{tabular}
+
+  \end{minipage}
+  
+  \caption{Confusion Matrix and score values for Age of Acquisition} \label{aoa_multi}
+\end{figure}
+
+As seen in the Tables and more specifically in the confusion matrix of Figure \ref{aoa_multi}, these results are not really useful. The results for \textit{Web Corpus Frequency} are not reported because they were not found of interest, given their low accuracy.
+
+Theoretically, the KNN algorithm performs well with multi-split target variable. The analysis for \textit{Age of Acquisition} performed with K=14 is summarized in Figure \ref{aoa_multi_KNN}.
+
+\begin{figure}[h]
+  \begin{minipage}{.4\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{aoa_multi_knn_matrix.png}%
+  \end{minipage}
+  \begin{minipage}{.2\linewidth}
+    \centering
+
+\begin{tabular}{|r|c|c|c|c|}
+\toprule
+{} &  \textbf{Precision} &    \textbf{Recall} &  \textbf{F1-Score} &      \textbf{Support} \\
+\midrule\midrule
+label 0-2     &   0.33 &  0.15 &  0.20 &    41 \\
+label 2-4     &   0.56 &  0.64 &  0.60 &   243 \\
+label 4-6     &   0.42 &  0.44 &  0.43 &   260 \\
+label 6-8     &   0.46 &  0.51 &  0.48 &   292 \\
+label 8-10    &   0.45 &  0.54 &  0.54 &   249 \\
+label 10-12   &   0.66 &  0.30 &  0.42 &    86 \\\hline
+%\textbf{macro avg}    &   0.43 &  0.42 &  0.42 &  1171 \\
+\textbf{weighted avg} &   0.50 &  0.50 &  0.49 &  1171 \\
+\textbf{accuracy}     &   0.50 &  0.50 &  0.50 &     0.50 \\
+\bottomrule
+\end{tabular}
+
 
   \end{minipage}
   
   \caption{Confusion Matrix and score values for \textit{Age of Acquisition} multiplit with KNN} \label{aoa_multi_KNN}
 \end{figure}
 
+As predicted, we can see an improvement with respect to the Decision Tree classification method. However, the scores remain low and for this reason, the multi-target-variable analysis will not be discussed in the conclusions.
 
 \subsection{Final Discussion}
+The ROC and AUC of all the models applied to the binary variable are reported in Figure \ref{fig:roc}.
+\begin{figure}[h]
+\centering
+\begin{minipage}[b]{.3\linewidth}
+\centering\large \includegraphics[width=0.8\linewidth]{arousal_ROC_c.png}
+\subcaption{Arousal}\label{fig:arroc}
+\end{minipage}%
+    \hfil
+\begin{minipage}[b]{.3\linewidth}
+\centering\includegraphics[width=0.8\linewidth]{valence_ROC_c.png}\subcaption{Valence}\label{fig:valroc}
+\end{minipage}    \hfil
+\begin{minipage}[b]{.3\linewidth}
+\centering\includegraphics[width=0.8\linewidth]{dominance_ROC_c.png}\subcaption{Dominance}\label{fig:domroc}
+\end{minipage}
 
-Given the interest for the target variables mentioned above, in Table \ref{tab:conf_matrices} are reported the Confusion Matrices.
+\begin{minipage}[b]{.3\linewidth}
+\centering\large \includegraphics[width=0.8\linewidth]{familiarity_ROC_c.png}
+\subcaption{Familiarity}\label{fig:famroc}
+\end{minipage}%
+    \hfil
+\begin{minipage}[b]{.3\linewidth}
+\centering\includegraphics[width=0.8\linewidth]{semsize_ROC_c.png}\subcaption{Semantic Size}\label{fig:semroc}
+\end{minipage}    \hfil
+\begin{minipage}[b]{.3\linewidth}
+\centering\includegraphics[width=0.8\linewidth]{masculinity_ROC_c.png}\subcaption{Masculinity}\label{fig:masroc}
+\end{minipage}
+
+\begin{minipage}[b]{.3\linewidth}
+\centering\includegraphics[width=0.8\linewidth]{polysemy_ROC_c.png}\subcaption{Polysemy}\label{fig:polroc}
+\end{minipage}    \hfil
+\begin{minipage}[b]{.3\linewidth}
+\centering\large \includegraphics[width=0.8\linewidth]{aoabinary_ROC_c.png}
+\subcaption{Age of Acquisition}\label{fig:aoabinroc}
+\end{minipage}    \hfil
+\begin{minipage}[b]{.3\linewidth}
+\centering\includegraphics[width=0.8\linewidth]{perceivability_ROC_c.png}
+\subcaption{Perceivability}\label{fig:perroc}
+\end{minipage}
 
 
+\caption{ROC and AUC of variables}\label{fig:roc}
+
+\end{figure}
+
+
+The identification of the best model is not unique and changes from variable to variable. However, one may extract some general considerations. Regarding Decision Trees, the \textit{entropy} impurity measure generally produces a smaller error than \textit{gini}. However, one can notice that overall KNN and Random Forest perform better than Classification Trees. This behavior is confirmed by the great performance with respect to every score (accuracy, precision, recall, F1 score) as shown in Table \ref{tab:knn_scores} for the variables of interest.
+One must pay attention to the fact that the good looking shape of the curves \ref{fig:arroc} and \ref{fig:semroc} for KNN is due to the low number of k, which makes it more exposed to statistical fluctuation. 
+
+Another useful tool for the analysis of the variables of interest is given by the Confusion Matrix of Table \ref{tab:conf_matrices}. In this Matrix one can see the True Positive (TP), True Negative (TN), False Positive (FP) and False Negative (FN), as labeled in the Table.
 
 \begin{table}[h]
     \centering
+    \adjustbox{max width=\textwidth}{%
     \begin{tabular}{|r||c|c||c|c||c|c||c|}
     \hline
-    & Predicted 0 & Predicted 1 & Predicted 0 & Predicted 1 & Predicted 0 & Predicted 1 &\\\hline\hline
-    True 0 & \cellcolor{Goldenrod}823 &  41 & \cellcolor{Goldenrod}1091 &  0 & \cellcolor{Goldenrod}663 &  70 & Decision \\\cline{1-7}\cline{1-7}
-    True 1 &  104 & \cellcolor{YellowGreen}203 &  80 & \cellcolor{YellowGreen}0 &  159 & \cellcolor{YellowGreen}279 &  Tree\\\hline\hline
+    & Predicted 1 & Predicted 0 & Predicted 1 & Predicted 0 & Predicted 1 & Predicted 0 &\\\hline\hline
+    True 1 & \cellcolor{YellowGreen}203 &  104 & \cellcolor{YellowGreen}0 &  80 & \cellcolor{YellowGreen}279 &  159 & Decision \\\cline{1-7}\cline{1-7}
+    True 0 &  41 & \cellcolor{Goldenrod}823 &  0 & \cellcolor{Goldenrod}1091 &  70 & \cellcolor{Goldenrod}663 &  Tree\\\hline\hline
     
     
-    True 0 & \cellcolor{Goldenrod}828 &  36 & \cellcolor{Goldenrod}1080 &  2 & \cellcolor{Goldenrod}660 &  73 & Random \bigstrut \\\cline{1-7}\cline{1-7}
-    True 1 &  100 & \cellcolor{YellowGreen}207 &  79 & \cellcolor{YellowGreen}1 &  139 & \cellcolor{YellowGreen}299 & Forest \\\hline \hline
+    True 1 & \cellcolor{YellowGreen}207 &  100 & \cellcolor{YellowGreen}1 &  79 & \cellcolor{YellowGreen}299 &  139 & Random \bigstrut \\\cline{1-7}\cline{1-7}
+    True 0 &  36 & \cellcolor{Goldenrod}828 &  2 & \cellcolor{Goldenrod}1080 &  73 & \cellcolor{Goldenrod}660 & Forest \\\hline \hline
     
     
-    True 0 & \cellcolor{Goldenrod}849 &   15 & \cellcolor{Goldenrod}1078 &  13 & \cellcolor{Goldenrod}694 &  39 & \multirow{2}[6]*{KNN} \bigstrut \\\cline{1-7}\cline{1-7}
-    True 1 &  129 & \cellcolor{YellowGreen}178 &  50 & \cellcolor{YellowGreen}30 &  162 &\cellcolor{YellowGreen} 276 & \\\hline \hline
+    True 1 & \cellcolor{YellowGreen}178 &   129 & \cellcolor{YellowGreen}30 &  50 & \cellcolor{YellowGreen}276 &  162 & \multirow{2}[6]*{KNN} \bigstrut \\\cline{1-7}\cline{1-7}
+    True 0 &  15 & \cellcolor{Goldenrod}849 &  13 & \cellcolor{Goldenrod}1078 &  39 &\cellcolor{Goldenrod} 694 & \\\hline \hline
     & \multicolumn{2}{|c||}{Valence} & \multicolumn{2}{|c||}{Polysemy} &
     \multicolumn{2}{|c||}{Age of Acquisition}& \\
     \hline
     \end{tabular}
-    \caption{Confusion Matrices for variable of interests according to different methods}
+    }
+    \caption{Confusion Matrices for variable of interests according to the different algorithms.\\ Green indicates the True Positives, while Yellow the True Negatives.}
     \label{tab:conf_matrices}
 \end{table}
 
-Comparing the results of the classification reports, we can see that KNN (Table \ref{tab:knn_scores}) performs better with respect to every score (accuracy, precision, recall, F1 score). The confusion matrices of Table \ref{tab:conf_matrices} highlights the fact that KNN can predict some of the few polysemyc words, unlike Decision Tree or Random Forest.  
+This matrix highlights the fact that KNN can predict some of the few polysemyc words, unlike Decision Tree or Random Forest.  
 
-On one hand, as for the binary target variables, the differences between these algorithms are not quite significant, because the other algorithms' scores are not that far apart. 
+The matrix is also helpful for the calculation of sensitivity, specificity and the other scores already mentioned. These are parameters of interest because we could give one more importance than another depending on the variable of consideration and the kind of analysis to perform. In our case, we do not have any particular need, so we look for a trade-off between precision and sensitivity. For this reason, the most useful variable for our analysis is the F1 Score, defined as a harmonic mean of the two variables mentioned above.
 
-On the other hand, the differences regarding the multi-split target variables between KNN's and the algorithms' scores are more evident.
-
+On one hand, one can infer that the differences between these algorithms as well as for the binary target variables are not particularly significant, because the F1 scores are not that far apart from each other. On the other hand, the differences regarding the multi-split target variables between KNN's and the algorithms' scores are more evident. 
 
 \section{Pattern Mining}
 Pattern mining is a process which allows to find out co-occurrences and patterns in our data. Firstly, we preprocessed our variables, as described in the section below. Then, we discovered the frequent itemsets and finally we extracted the association rules. 
 
 \subsection{Preprocessing}
-In order to apply a pattern discovery algorithm, we firstly normalized our dataset with the MinMaxScaler. For a better analysis, we chose to divide the range of the variables in four intervals, i.e. we  multiplied the normalized values by 3, so that each variable falls between 0 and 4. We then truncate all the variables, rounding them down. Afterwards, we added the name of the variable to its corresponding values. For the only binary variable, \textit{Polysemy}, we implemented a dictionary where 0 is \textit{not polysemic} and 1 is \textit{polysemic}. However, after some attempts in the association rules mining, we noticed that the variable \textit{polysemy} may results in noise. That is due to the high frequency of not polysemic words in dataset, which implies an irrelevance of said variable in the rules.
+In order to apply a pattern discovery algorithm, we firstly normalized our dataset with the MinMaxScaler. For a better analysis, we chose to divide the range of the variables in four intervals, i.e. we  multiplied the normalized values by 3, so that each variable falls between 0 and 4. We then truncate all the variables, rounding them down. Afterwards, we added the name of the variable to its corresponding values. For the only binary variable, \textit{Polysemy}, we implemented a dictionary where 0 is \textit{not polysemic} and 1 is \textit{polysemic}. However, after some attempts in the association rules mining, we noticed that the variable \textit{polysemy} may results in just noise, without contribuiting to the analysis. That is due to the high frequency of not polysemic words in dataset, which implies an irrelevance of said variable in the rules.
 Therefore, we decided to drop \textit{polysemy}.
 
 \subsection{Frequent Itemsets}
-To perform pattern extraction, we first applied the \textit{apriori algorithm}, in order to find all the frequent itemsets.
+To perform pattern extraction, we applied the \textit{apriori algorithm}, in order to find all the frequent itemsets.
 %brief description of the apriori algorithm
 
-\subsection{Varying the parameters}
-The parameters to vary for the \textit{apriori algorithm} are the support, the minimum number of items in a set, and the maximum items in a set. We decide to not set a limit for the max parameter. The number of frequent itemsets varying the other 2 parameters are plotted in Figure \ref{fig:itemset_parameters}. One can also look how the plots change considering only the closed and maximal itemsets. Specifically, we notice that the green line (closed itemsets) overlaps with the yellow one (all itemsets). We then deduce that all the itemsets are closed.
+\subsection{Choice of parameters}
+The parameters to set for the \textit{apriori algorithm} are the support, the minimum number of items in a set, and the maximum items in a set. We decide to not set a limit for the max parameter. The number of frequent itemsets varying the other 2 parameters are plotted in Figure \ref{fig:itemset_parameters}. One can also look how the plots change considering only the closed and maximal itemsets. Specifically, we noticed that the green line (closed itemsets) overlaps with the yellow one (all itemsets). We then deduced that all the itemsets are closed.
 
 \begin{figure}[h]
 \begin{minipage}{0.51\linewidth}
@@ -1138,8 +1065,8 @@ The parameters to vary for the \textit{apriori algorithm} are the support, the m
     \label{fig:itemset_parameters}
 \end{figure}
 
-Given the dimension of the dataset, we decide to set the support parameter to 6.4\%. This choice is also due to the fact that the number of item-sets does not decrease significantly after this value.
-Regarding the minimum number of elements in a set, we decided to leave the variable as loose as possible (zmin=1). For this specific dataset it does not seem appropriate to us to exclude a priori one-to-one rules. The one-to-one rules that are not relevant will be left out by the confidence or lift threshold. 
+Given the dimension of the dataset, we decided to set the support parameter to 6.5\%. This choice is also due to the fact that the number of item-sets does not decrease significantly after this value.
+Regarding the minimum number of elements in a set, we decided to leave the variable as loose as possible (zmin=1), because for this specific dataset it does not seem appropriate to us to exclude a priori one-to-one rules. The one-to-one rules that are not relevant will be left out by the confidence or lift threshold. 
 
 \begin{minipage}{0.48\linewidth}
 
@@ -1200,11 +1127,11 @@ The threshold for the lift is set at 1.6. The obtained rules, ordered by target 
 
 \begin{table}[h]
     \centering
-\adjustbox{max width=\textwidth}{%
+\adjustbox{max width=0.85\textwidth}{%
 \begin{tabular}{|r|l|c|r|r|r|r|}
 \toprule
 {} &                                         Antecedent &              Target &  Lift &  Conf &  Supp (\%) &  Supp \\
-\midrule
+\midrule\midrule
 1  &                                     (0.0\_SemSize,) &  3.0\_Perceivability &  2.45 &  0.76 &      7.78 &   363 \\\hline
 2  &      (0.0\_Age\_of\_Acquisition, 7.0\_Web\_Corpus\_Freq) &     3.0\_Familiarity &  2.23 &  0.93 &      7.26 &   339 \\\hline
 3  &            (0.0\_Age\_of\_Acquisition, 2.0\_Dominance) &     3.0\_Familiarity &  2.16 &  0.90 &      8.53 &   398 \\\hline
@@ -1230,7 +1157,7 @@ The threshold for the lift is set at 1.6. The obtained rules, ordered by target 
 \bottomrule
 \end{tabular}
 }
-        \caption{Association Rules with a confidence greater than 75\% and lift greater than 1.6}\label{tab:rules}
+        \caption{Association Rules with a confidence$\geq75\%$, lift$\geq1.6$ and support$\geq6.5\%$}\label{tab:rules}
 
 \end{table}
 
@@ -1240,16 +1167,16 @@ A useful aspect of the Association Rules is the replacement of missing values wi
 
 For the results with a high count (e.g. TV, Mom, yo-yo) one may replace the predicted value for \textit{Web Corpus Frequency}. However, the lift, support and confidence for the majority of these rules are not quite good.
 
-Trying to tight up the cuts on the parameters (supp=4, conf=60, lift=1.4), one find only one rule that predict the missing value for the words in Table \ref{tab:miss_ass}. This rule applies only for yo-yo and predicts the same result shown in the table.
+Trying to tighten up the cuts on the parameters (supp>4, conf>60, lift>1.4), one find only one rule that predict the missing value for the words in Table \ref{tab:miss_ass}. This rule applies only for yo-yo and predicts the same result shown in the table.
 
 
 \subsection{Final Discussion}
 
 In the choice of the threshold for the confidence and the lift we opted for a balance between quantity and quality of the rules. 
 
-The obtained rules in Table \ref{tab:rules} all have a high lift and the majority has as target the variable \textit{valence}. However, the variable \textit{familiarity} is the one with the most interesting rules, because of its high lift and confidence. We can also notice the negative correlation between \textit{age of acquisition} and \textit{familiarity}: every high value for \textit{familiarity} is predicted by a low value of \textit{age of acquisition}.
+The obtained rules in Table \ref{tab:rules} all have a high lift and the majority has as target the variable \textit{Valence}. However, the variable \textit{Familiarity} is the one with the most interesting rules, because of its high lift and confidence. We can also notice the negative correlation between \textit{age of acquisition} and \textit{Familiarity}: every high value for \textit{Familiarity} is predicted by a low value of \textit{Age of Acquisition}.
 
-Regarding the replacement of missing values, one can only infer quite certainly that the word \textit{yo-yo} has a Web Corpus Frequency value of 6. Given the fact that the words in Table \ref{tab:miss_ass} seem common, the results for the other words appear reasonable. However, these predictions have a low confidence and lift level, so there is no certainty of their accuracy.
+Regarding the replacement of missing values, one can only infer quite certainly that the word \textit{yo-yo} has a \textit{Web Corpus Frequency} value of 6. Given the fact that the words in Table \ref{tab:miss_ass} seem common, the results for the other words appear reasonable. However, these predictions have a low confidence and lift level, so there is no certainty of their accuracy.
 %commento sul fatto che regole trovate sono buone e hanno lift alto e che se ne potrebbero avere anche di più variando di poco i parametri (support, confidence, lift). Abbiamo scelto di tenere poche regole (quindi fare tagli alti) per verificarle coi tree delle target variable. 
 %confronto con tree (familiarity, valence, dominance?)
 %inseriamo immagine del tree di valence (L'HO GIA' MESSA NELLA PARTE DI PRUNING) e facciamo vedere due esempi di regole che performano bene.
@@ -1261,25 +1188,25 @@ Regarding the replacement of missing values, one can only infer quite certainly 
 
 The Glasgow Norms has resulted to be an interesting dataset to work with.
 
-The application of unsupervised and supervised algorithms has shown some trends. For instance, there is a group of words, belonging to the sixth cluster (from the Hierarchical Clustering algorithm) which are short in length, acquired in early age and very familiar: this is reflected in the fifth association rule (\textit{(0.0 Age of Acquisition, 0.0 Length)} $\Rightarrow$ \textit{3.0 Familiarity)}
+The application of unsupervised and supervised algorithms has shown some trends. For instance, there is a group of words, belonging to the sixth cluster (from the Hierarchical Clustering algorithm) which are short in length, acquired in early age and very familiar: this is reflected in the fifth association rule \textit{((0.0 Age of Acquisition, 0.0 Length)} $\Rightarrow$ \textit{3.0 Familiarity)}
 in Table \ref{tab:rules}. Similarly, the third cluster (from the Hierarchical Clustering algorithm) contains words with high valence, high dominance and high semantic size: an extracted rule (n. 22 in Table \ref{tab:rules}) implies that words with high valence and semantic size are high in dominance as well. 
 
 \textit{Valence} proves to be a good target variable for classification, with high accuracy, precision, recall and F1-score; at the same time, it is a consequent (meaning target variable) for a large number of extracted rules. 
 
 The same is true for the variable \textit{Familiarity}, which proves to be an interesting variable also because of its high anti-correlation with \textit{Age of Acquisition}. One can compare the rules found with the classification tree obtained in Section \ref{target_dt} and shown in Figure \ref{fig:tree_fam}. The variables used to split the tree confirm the found association rules completely.
-
-On the other hand, the only binary parameter, \textit{Polysemy}, was not a satisfying target variable, given the imbalance of its distribution: the large majority of words in the dataset are not polysemic. Thus, leading to inaccurate or unexpected results during the clustering, %controllare 
-classification and pattern mining tasks.
-
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{familiarity_tree.png}
+    \includegraphics[width=0.9\textwidth]{fam_tree_entropy.png}
     \caption{Familiarity Decision Tree}
     \label{fig:tree_fam}
 \end{figure}
+On the other hand, the only binary parameter, \textit{Polysemy}, was not a satisfying target variable, given the imbalance of its distribution: the large majority of words in the dataset are not polysemic. Thus, leading to inaccurate or unexpected results during the clustering, %controllare 
+classification and pattern mining tasks.
+
+
 
 %considerazioni generali
-%\newpage
+\newpage
 %\pagenumbering{roman} % Start roman numbering
 \nocite{*}
 \printbibliography
