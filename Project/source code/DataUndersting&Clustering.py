@@ -38,6 +38,8 @@ from google.colab import files
 !pip install pyfim
 from fim import apriori
 
+import plotly.express as px
+
 #caricamento del dataset
 df = pd.read_csv('words_glasgow.csv')
 #faccio una copia del dataset in caso di manipolazione dati
@@ -1124,7 +1126,7 @@ kmeans.labels_
 from matplotlib import cm
 plt.scatter( Y_pca[:,0], Y_pca[:,1], s=40, c= kmeans.labels_ , cmap = cm.tab20c)
 
-plt.xticks(fontsize=20)
+#plt.xticks(fontsize=20)
 plt.yticks(fontsize=20)
 
 plt.show()
@@ -1132,7 +1134,7 @@ plt.show()
 plt.scatter( Y_pca_minmax[:,0], Y_pca_minmax[:,1], s=40, c= kmeans.labels_ , cmap = cm.tab20c)
 plt.scatter( centers[:,0], centers[:,1], c='red', marker='*', s=200 )
 
-plt.xticks(fontsize=20)
+#plt.xticks(fontsize=20)
 plt.yticks(fontsize=20)
 
 plt.show()
@@ -1165,14 +1167,32 @@ for cols, x in zip(df_xminmax_plot.columns[5:], range(5)):
         g2=sb.boxplot(y=cols, x='cluster', data=df_xminmax_plot, order=['1', '2','3'], ax=axs[x,y], showfliers = True )
         g2.set(xlabel=None)
 
+df_xminmax['cluster'].map({1:'1', 2:'2', 3:'3'})
+
+df_mean=df_xminmax.groupby(['cluster'],group_keys=True).median()
+
+cols = [col for col in df_mean.columns if col !="word"]
+
+fig = px.parallel_coordinates(df_mean, range_color=[0.5, 3.5],dimensions=cols, labels={"length": "length",
+                "arousal": "arousal", "valence": "valence",
+                "dominance": "dominance", "familiarity": "familiarity", "aoa": "aoa",
+                "semsize": "size", "masculinity": "masculinity",
+                "web_corpus_freq": "freq", "perceivability": "perceivability",},
+                color_continuous_scale=[(0.00, "yellow"),   (0.33, "yellow"),
+                                        (0.33, "green"), (0.66, "green"),
+                                        (0.66, "blue"),  (1.00, "blue")],
+                              color=[1,2,3],
+                             color_continuous_midpoint=2)
+fig.show()
+
 df_perc.isnull().sum()
 
 df_xminmax_plot['word']=df_perc['word']
-df_xminmax_plot.loc[df_xminmax['cluster']=='First']
+df_xminmax_plot.loc[df_xminmax['cluster']=='1']
 
-df_xminmax_plot.loc[df_xminmax['cluster']=='Second']
+df_xminmax_plot.loc[df_xminmax['cluster']=='2']
 
-df_xminmax_plot.loc[df_xminmax['cluster']=='Third']
+df_xminmax_plot.loc[df_xminmax['cluster']=='3']
 
 """## 2.3    Analysis by density-based clustering"""
 
@@ -1219,7 +1239,7 @@ print(max(unique_labels))
 
 plt.scatter( Y_pca_minmax[:,0], Y_pca_minmax[:,1], s=25, c= dbscan.labels_, cmap = cm.tab20 )
 
-plt.xticks(fontsize=2)
+#plt.xticks(fontsize=2)
 plt.yticks(fontsize=2)
 
 plt.show()
@@ -1292,7 +1312,7 @@ hier.n_clusters_
 
 plt.scatter( Y_pca_minmax[:,0], Y_pca_minmax[:,1],s=50, c= hier.labels_, marker='.', cmap = cm.tab20)
 
-plt.xticks(fontsize=20)
+#plt.xticks(fontsize=20)
 plt.yticks(fontsize=20)
 
 plt.show()
@@ -1343,15 +1363,36 @@ df_perc.isnull().sum()
 
 df_xminmax_plot['word']=df_perc['word']
 
-df_xminmax_plot.loc[df_xminmax['cluster']=='First']
+df_xminmax_plot.loc[df_xminmax['cluster']=='1']
 
-df_xminmax_plot.loc[df_xminmax['cluster']=='Second']
+df_xminmax_plot.loc[df_xminmax['cluster']=='2']
 
-df_xminmax_plot.loc[df_xminmax['cluster']=='Third']
+df_xminmax_plot.loc[df_xminmax['cluster']=='3']
 
-df_xminmax_plot.loc[df_xminmax['cluster']=='Fourth']
+df_xminmax_plot.loc[df_xminmax['cluster']=='4']
 
-df_xminmax_plot.loc[df_xminmax['cluster']=='Fifth']
+df_xminmax_plot.loc[df_xminmax['cluster']=='5']
+
+df_xminmax_plot.loc[df_xminmax['cluster']=='6']
+
+df_mean=df_xminmax.groupby(['cluster'],group_keys=True).median()
+
+cols = [col for col in df_mean.columns if col !="word"]
+
+fig = px.parallel_coordinates(df_mean, color=[1,2,3,4,5,6], range_color=[0.5, 6.5],dimensions=cols,labels={"length": "length",
+                "arousal": "arousal", "valence": "valence",
+                "dominance": "dominance", "familiarity": "familiarity", "aoa": "aoa",
+                "semsize": "size", "masculinity": "masculinity",
+                "web_corpus_freq": "frequency", "perceivability": "perceivability",},
+                color_continuous_scale=[(0.00, "yellow"),   (0.16, "yellow"),
+                                        (0.17, "green"), (0.33, "green"),
+                                        (0.34, "blue"),  (0.50, "blue"),
+                                        (0.51, "red"),(0.67, "red"),
+                                        (0.68, "pink"),  (0.83, "pink"),
+                                        (0.84, "black"), (1.00, "black")
+                                        ],
+                             color_continuous_midpoint=5)
+fig.show()
 
 # non serve ora 
 #hier = AgglomerativeClustering(n_clusters=5, affinity='euclidean', linkage='ward')
